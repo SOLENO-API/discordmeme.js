@@ -86,12 +86,12 @@ const memer = require("discordmeme.js")
   let text = args.join(" ")
   if (!text) return message.channel.send("Provide text m8");
   
-  let clyde = await memer.qrcodegen(text)
+  let qr = await memer.qrcodegen(text)
   
   
  const embed = new Discord.RichEmbed()
  .setAuthor("QR-CODE GEN!")
- .setImage(clyde)
+ .setImage(qr)
  .setColor("RANDOM")
 message.channel.send(embed);
 
