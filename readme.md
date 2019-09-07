@@ -11,7 +11,7 @@ npm i discordmeme.js
 ## Endpoints
 _________________________________________________
 ```
-> meme - Provides random memes. [Currently Unavailable]
+> meme - Provides random memes.
 Required:- 
 ```
 _________________________________________________
