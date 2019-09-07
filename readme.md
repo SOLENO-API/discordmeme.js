@@ -81,11 +81,18 @@ let triggered = await memer.trigger(avatar)
 
 2]
 ```js
-const memer = require("discordmeme.js");
+const memer = require("discordmeme.js")
 
-let qr = await memer.qrcodegen("Hello World!")
+  let text = args.join(" ")
+  if (!text) return message.channel.send("Provide text m8");
   
-    const attachment = new Discord.Attachment(qr, 'qrcode.png');
-    message.channel.send(attachment);
+  let clyde = await memer.qrcodegen(text)
+  
+  
+ const embed = new Discord.RichEmbed()
+ .setAuthor("QR-CODE GEN!")
+ .setImage(clyde)
+ .setColor("RANDOM")
+message.channel.send(embed);
 
 ```
