@@ -1,6 +1,8 @@
 # discordmeme.js
 meme.js is an api wrapper for discord bots which aims to provide memes and image gen.
 
+**[Docs](https://solenoapi.netlify.com/memes)**
+
 # Installing
 [![NPM](https://nodei.co/npm/discordmeme.js.png)](https://nodei.co/npm/discordmeme.js/)
 
@@ -8,7 +10,7 @@ meme.js is an api wrapper for discord bots which aims to provide memes and image
 npm i discordmeme.js
 ```
 
-## Endpoints
+## Endpoints [Memes & Image Gen]
 _________________________________________________
 ```
 > meme - Provides random memes.
@@ -66,6 +68,46 @@ Required:- text
 ```
 _________________________________________________
 
+## NSFW
+_________________________________________________
+
+```
+> porn - Get porn GIF.
+```
+_________________________________________________
+```
+> gonewild - Gonewild Image.
+```
+_________________________________________________
+```
+> anal - Get anal pic/GIF.
+```
+_________________________________________________
+```
+> pussy - Get image of pussy.
+```
+_________________________________________________
+```
+> fourk - Get 4K image.
+```
+_________________________________________________
+```
+> ass - Get image of ass.
+```
+_________________________________________________
+```
+> hanal - Get image of hanal.
+```
+_________________________________________________
+```
+> thigh - Get thigh's image.
+```
+_________________________________________________
+```
+neko - Get picture of Neko.
+```
+_________________________________________________
+
 ## Example
 
 1]
@@ -81,18 +123,23 @@ let triggered = await memer.trigger(avatar)
 
 2]
 ```js
-const memer = require("discordmeme.js")
+const memer = require("discordmeme.js");
 
-  let text = args.join(" ")
-  if (!text) return message.channel.send("Provide text m8");
+let qr = await memer.qrcodegen("Hello World!")
   
-  let qr = await memer.qrcodegen(text)
+    const attachment = new Discord.Attachment(qr, 'qrcode.png');
+    message.channel.send(attachment);
+
+```
+
+3]
+```js
+const memer = require("discordmeme.js");
+
+let neko = await memer.neko()
   
-  
- const embed = new Discord.RichEmbed()
- .setAuthor("QR-CODE GEN!")
- .setImage(qr)
- .setColor("RANDOM")
-message.channel.send(embed);
+    const embed = new Discord.RichEmbed()
+    .setImage(neko)
+    message.channel.send(embed);
 
 ```
